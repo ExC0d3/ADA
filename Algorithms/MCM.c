@@ -39,7 +39,7 @@ int main(){
 	}
 
 	for(a=0;a<n;a++){
-		scanf("%d",arr+a);
+		scanf("%d ",arr+a);
 	}
 
 	for(a=1;a<n;a++){
@@ -52,6 +52,7 @@ int main(){
 			*(*(m+i)+j) = 21476876;
 			for(k=i;k<j;k++){
 				t = *(*(m+i)+k) + *(*(m+k+1)+j) + *(arr+i-1)*(*(arr+k))*(*(arr+j));
+				printf("%d ",t);
 				if(t < *(*(m+i)+j)){
 					*(*(m+i)+j) = t;
 					*(*(s+i)+j) = k;
