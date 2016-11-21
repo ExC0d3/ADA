@@ -18,10 +18,9 @@ int partition(int *arr,int l,int piv, int r){
 	int val = *(arr+piv),i=l-1,j=r+1,temp;
 
 	while(1){
-		while(i<=r && *(arr+i) <= val)
-			i++;
-		while(j>=0 && *(arr+j) > val)
-			j--;
+		do i++; while(*(arr+i) < val);
+		
+		do j--; while(*(arr+j) > val);
 
 		if(i<j){
 			temp = *(arr+i);
@@ -29,11 +28,9 @@ int partition(int *arr,int l,int piv, int r){
 			*(arr+j) = temp;
 		}
 		else{
-			break;
+			return i;
 		}
 	}
-
-	return i;
 }
 
 int main(int argc, char const *argv[]){
@@ -49,7 +46,7 @@ int main(int argc, char const *argv[]){
 	quicksort(arr,0,n-1);
 
 	for(a=0;a<n;a++)
-		printf("%d", *(arr+a));
+		printf("%d ", *(arr+a));
 
 	return 0;
 }
