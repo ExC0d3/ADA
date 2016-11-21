@@ -51,7 +51,7 @@ int main(){
 			j =i+l-1;
 			*(*(m+i)+j) = 21476876;
 			for(k=i;k<j;k++){
-				t = *(*(m+i)+k) + *(*(m+k+1)+k) + *(arr+i-1)*(*(arr+k))*(*(arr+j));
+				t = *(*(m+i)+k) + *(*(m+k+1)+j) + *(arr+i-1)*(*(arr+k))*(*(arr+j));
 				if(t < *(*(m+i)+j)){
 					*(*(m+i)+j) = t;
 					*(*(s+i)+j) = k;
